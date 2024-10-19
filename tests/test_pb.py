@@ -57,8 +57,8 @@ class TestPB(unittest.TestCase):
                 if device:
                     device_type = self.deviceapps[i]["device"].get("type", None)
                     device_id = self.deviceapps[i]["device"].get("id", None)
-                    self.assertEqual(unpacked.device.type, device_type)
-                    self.assertEqual(unpacked.device.id, device_id)
+                    self.assertEqual(unpacked.device.type.decode("utf-8"), device_type)
+                    self.assertEqual(unpacked.device.id.decode("utf-8"), device_id)
 
                 lat = self.deviceapps[i].get("lat", None)
                 lon = self.deviceapps[i].get("lon", None)

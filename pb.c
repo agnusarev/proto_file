@@ -127,7 +127,7 @@ static PyObject* py_deviceapps_xwrite_pb(PyObject* self, PyObject* args) {
             for(i=0; i<msg.n_apps; i++){
                py_app = PyList_GetItem(py_apps, i);
                // py_app converts to int
-               if(!PySet_Check(py_app)){
+               if(!PyLong_Check(py_app)){
                     PyErr_SetString(PyExc_TypeError, "app should be of type int");
                     goto error;
                }
